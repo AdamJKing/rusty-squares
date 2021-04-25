@@ -1,0 +1,18 @@
+[package]
+name = "rusty-squares"
+version = "0.1.0"
+authors = ["Adam <adamjking1995@outlook.com>"]
+edition = "2018"
+
+[dependencies]
+bevy = "0.5.0"
+
+# Compile all the *dependencies* in optimized release mode even if `--release` is not passed in
+[profile.dev]
+opt-level = 3
+debug = false
+
+# But compile the project itself in debug mode if `--release` is not passed in
+[profile.dev.package.rusty-squares]
+opt-level = 0
+debug = true
